@@ -90,6 +90,9 @@
                                                 <integer key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="resultButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="yeI-np-jep"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -103,7 +106,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="bwB-Yh-F5D" kind="show" id="1B4-2b-VR0"/>
+                        <outlet property="parentsNameTF" destination="LcI-oy-p9j" id="hFV-Fl-S0h"/>
+                        <outlet property="yourNameTF" destination="2hE-wc-PsG" id="lrf-eL-mru"/>
+                        <segue destination="bwB-Yh-F5D" kind="show" identifier="goScene" id="1B4-2b-VR0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -186,10 +191,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hCA-Jp-uY4"/>
+                    <connections>
+                        <outlet property="resuilNamesLabel" destination="bSx-OS-Atr" id="CEp-3i-nX3"/>
+                        <outlet property="resultPregressView" destination="sNQ-cf-xDZ" id="Q4b-5g-XaM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSK-bS-McT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="3"/>
+            <point key="canvasLocation" x="954" y="3"/>
         </scene>
     </scenes>
 </document>
