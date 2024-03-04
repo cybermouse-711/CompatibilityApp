@@ -17,7 +17,7 @@ class ResultViewController: UIViewController {
     
     //MARK: - Properties
     var yourName: String!
-    var parentsName: String!
+    var partnersName: String!
     
     //MARK: - Override Metods
     override func viewDidLoad() {
@@ -58,8 +58,8 @@ class ResultViewController: UIViewController {
         var result = 0
         
         let yourName = findValue(for: yourName)
-        let parentsName = findValue(for: parentsName)
-        let absDifference = abs(yourName - parentsName)
+        let partnersName = findValue(for: partnersName)
+        let absDifference = abs(yourName - partnersName)
         
         switch absDifference {
         case 0, 1, 2:
@@ -82,7 +82,7 @@ private extension ResultViewController {
     func setupUI() {
         let result = findResult()
         
-        resultNamesLabel.text = "\(yourName ?? "") and \(parentsName ?? "")"
+        resultNamesLabel.text = "\(yourName ?? "") and \(partnersName ?? "")"
         
         resultProgressView.transform = resultProgressView.transform.scaledBy(x: 1, y: 2)
         resultProgressView.progress = Float(result) / 100

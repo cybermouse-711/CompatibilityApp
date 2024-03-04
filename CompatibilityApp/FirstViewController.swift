@@ -12,19 +12,19 @@ class FirstViewController: UIViewController {
 
     //MARK: - @IBOutlet
     @IBOutlet var yourNameTF: UITextField!
-    @IBOutlet var parentsNameTF: UITextField!
+    @IBOutlet var partnersNameTF: UITextField!
     
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let resultVC = segue.destination as? ResultViewController else { return }
         resultVC.yourName = yourNameTF.text
-        resultVC.parentsName = parentsNameTF.text
+        resultVC.partnersName = partnersNameTF.text
     }
     
     //MARK: - @IBAction
     @IBAction func resultButton() {
-        guard let yourName = yourNameTF.text, let parentsName = parentsNameTF.text else { return }
+        guard let yourName = yourNameTF.text, let parentsName = partnersNameTF.text else { return }
         if yourName.isEmpty || parentsName.isEmpty {
             showAlert(
                 title: "Names are missing",
@@ -39,7 +39,7 @@ class FirstViewController: UIViewController {
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
         yourNameTF.text = ""
-        parentsNameTF.text = ""
+        partnersNameTF.text = ""
     }
 }
 
@@ -52,7 +52,7 @@ extension FirstViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == yourNameTF {
-            parentsNameTF.becomeFirstResponder()
+            partnersNameTF.becomeFirstResponder()
         } else {
             resultButton()
         }
