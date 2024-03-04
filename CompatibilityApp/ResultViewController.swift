@@ -13,7 +13,7 @@ class ResultViewController: UIViewController {
     //MARK: - @IBOutlet
     @IBOutlet var resultNamesLabel: UILabel!
     @IBOutlet var procentLabel: UILabel!
-    @IBOutlet var resultPregressView: UIStackView!
+    @IBOutlet var resultProgressView: UIProgressView!
     
     //MARK: - Properties
     var yourName: String!
@@ -22,10 +22,21 @@ class ResultViewController: UIViewController {
     //MARK: - Override Metods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        resultNamesLabel.text = "\(yourName) and \(parentsName)."
+        setupUI()
     }
     
 
 
+}
+
+//MARK: - Extensions
+private extension ResultViewController {
+    func setupUI() {
+        resultNamesLabel.text = "\(yourName ?? "") and \(parentsName ?? "")"
+        
+        resultProgressView.transform = resultProgressView.transform.scaledBy(x: 1, y: 2)
+        resultProgressView.progress = 2
+        
+        procentLabel.text = ""
+    }
 }
