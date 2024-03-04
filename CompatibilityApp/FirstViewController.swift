@@ -32,10 +32,15 @@ class FirstViewController: UIViewController {
             )
             return
         }
-        
         performSegue(withIdentifier: "goResult", sender: nil)
     }
     
+    
+    
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+        yourNameTF.text = ""
+        parentsNameTF.text = ""
+    }
 }
 
 //MARK: - UITextFieldDelegate

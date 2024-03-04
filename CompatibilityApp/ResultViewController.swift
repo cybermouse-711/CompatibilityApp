@@ -25,7 +25,8 @@ class ResultViewController: UIViewController {
         setupUI()
     }
     
-
+    //MARK: - Private Metods
+    
 
 }
 
@@ -35,8 +36,8 @@ private extension ResultViewController {
         resultNamesLabel.text = "\(yourName ?? "") and \(parentsName ?? "")"
         
         resultProgressView.transform = resultProgressView.transform.scaledBy(x: 1, y: 2)
-        resultProgressView.progress = 2
+        resultProgressView.progress = 2 //text
         
-        procentLabel.text = ""
+        procentLabel.text = "" //text
     }
 }
