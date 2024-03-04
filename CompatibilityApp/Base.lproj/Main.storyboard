@@ -192,7 +192,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="hCA-Jp-uY4"/>
                     <connections>
-                        <outlet property="resuilNamesLabel" destination="bSx-OS-Atr" id="CEp-3i-nX3"/>
+                        <outlet property="procentLabel" destination="U8K-7S-YBH" id="6Z5-TW-FIz"/>
+                        <outlet property="resultNamesLabel" destination="bSx-OS-Atr" id="CEp-3i-nX3"/>
                         <outlet property="resultPregressView" destination="sNQ-cf-xDZ" id="Q4b-5g-XaM"/>
                     </connections>
                 </viewController>

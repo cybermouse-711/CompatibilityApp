@@ -17,16 +17,19 @@ class FirstViewController: UIViewController {
     //MARK: - Override Metods
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let resultVC = UIStoryboard as? ResultViewController else { return }
+        guard let resultVC = segue.destination as? ResultViewController else { return }
+        resultVC.yourName = yourNameTF.text ?? ""
+        resultVC.parentsName = parentsNameTF.text ?? ""
     }
-
+    
     //MARK: - @IBAction
     @IBAction func resultButton() {
+        
     }
     
 }

@@ -11,13 +11,19 @@ import UIKit
 class ResultViewController: UIViewController {
     
     //MARK: - @IBOutlet
-    @IBOutlet var resuilNamesLabel: UILabel!
+    @IBOutlet var resultNamesLabel: UILabel!
+    @IBOutlet var procentLabel: UILabel!
     @IBOutlet var resultPregressView: UIStackView!
+    
+    //MARK: - Properties
+    var yourName: String!
+    var parentsName: String!
     
     //MARK: - Override Metods
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        resultNamesLabel.text = "\(yourName) and \(parentsName)."
     }
     
 
