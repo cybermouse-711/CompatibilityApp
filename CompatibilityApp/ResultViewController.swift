@@ -87,6 +87,6 @@ private extension ResultViewController {
         resultProgressView.transform = resultProgressView.transform.scaledBy(x: 1, y: 2)
         resultProgressView.progress = Float(result) / 100
         
-        procentLabel.text = result.formatted()
+        procentLabel.text = "\(result.formatted()) %"
     }
 }

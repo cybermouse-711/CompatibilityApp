@@ -14,7 +14,6 @@ class FirstViewController: UIViewController {
     @IBOutlet var yourNameTF: UITextField!
     @IBOutlet var partnersNameTF: UITextField!
     
-    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let resultVC = segue.destination as? ResultViewController else { return }
@@ -27,16 +26,20 @@ class FirstViewController: UIViewController {
         guard let yourName = yourNameTF.text, let parentsName = partnersNameTF.text else { return }
         if yourName.isEmpty || parentsName.isEmpty {
             showAlert(
-                title: "Names are missing",
+                title: "Names are missing!",
+                message: "Please enter both names ♥︎"
+            )
+            return
+        } else if yourName.contains(/[0-9]/) || parentsName.contains(/[0-9]/) {
+            showAlert(
+                title: "Wrong format!",
                 message: "Please enter both names ♥︎"
             )
             return
         }
         performSegue(withIdentifier: "goResult", sender: nil)
     }
-    
-    
-    
+
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
         yourNameTF.text = ""
         partnersNameTF.text = ""
